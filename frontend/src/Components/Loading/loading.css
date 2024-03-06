@@ -1,0 +1,16 @@
+
+.loading-page{
+    width: 350px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 500px;
+}
+img{
+    width: 200px;
+    margin-bottom: 40px;
+}
+.load{
+    border-radius: 200px;
+    margin: 8px;
+}

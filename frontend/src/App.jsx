@@ -1,0 +1,29 @@
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
+import './App.css'
+
+
+import Home from './Components/Home/Home'
+import Form from './Components/Form/Form'
+import Client from './Components/vues/Client/Client'
+import Reclamation from './Components/vues/Reclamation/Reclamation'
+import Parametre from './Components/vues/Parametre/Parametre'
+
+function App() {
+  
+
+  return (
+    <>
+     <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/login' element={<Form/>}></Route>
+        <Route path='/client' element={<Client/>}></Route>
+        <Route path='/reclamation' element={<Reclamation/>}></Route>
+        <Route path='/parametre/:id' element={<Parametre/>}/>
+      </Routes>
+     </BrowserRouter>
+    </>
+  )
+}
+
+export default App
