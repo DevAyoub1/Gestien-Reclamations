@@ -10,7 +10,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PersonIcon from '@mui/icons-material/Person';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 
 
@@ -34,6 +34,7 @@ export default function SidebarAdmin() {
            <Link to={"/login"}><a><LoginIcon className='icons'/><span>Login</span></a></Link>
             <Link to={"/login"}><a><PersonAddIcon className='icons'/><span>Register</span></a></Link>
             </div>
+            <div><Outlet/></div>
         
       </div>
       

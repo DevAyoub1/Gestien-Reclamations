@@ -13,6 +13,7 @@ import Chart from './Components/vues/Chart/Chart1/Chart1'
 import Chart2 from './Components/vues/Chart/Chart2/Chart2'
 import Calendar from './Components/vues/Calendar/Calendar'
 import Navbar from './Components/Navbar/Navbar'
+import { Index } from './Components/Index'
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <>
-     <BrowserRouter>
+     {/* <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/login' element={<Form/>}></Route>
@@ -28,7 +29,8 @@ function App() {
         <Route path='/reclamation' element={<Reclamation/>}></Route>
         <Route path='/parametre/:id' element={<Parametre/>}/>
       </Routes>
-     </BrowserRouter>
+     </BrowserRouter> */}
+     <RouterProvider router={Index}></RouterProvider>
     </>
   )
 }
