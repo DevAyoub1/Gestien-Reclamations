@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import './navbar.css'
 import { SearchOutlined } from '@mui/icons-material';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
@@ -27,7 +27,7 @@ export default function Navbar() {
         <hr id='search'/>
         <SearchOutlined className='icn'/>
         
-        <input type='search' placeholder='recherché'/>
+        <input type='search' placeholder='recherché' id='inp'/>
       </div>
       <div className="right">
       <div className='not'>

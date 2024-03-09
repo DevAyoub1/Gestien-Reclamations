@@ -25,14 +25,14 @@ export default function SidebarAdmin() {
       <div className='side-list'>
         
           
-            <Link to={"/"}><a><i><SignalCellularAltSharpIcon className='icon' /><span>Dashboard</span></i></a></Link>
-            <Link to={'/client'}><a><PeopleAltSharpIcon className='icon'/><span>Client</span></a></Link>
-            <Link to={"/reclamation"}><a><AssignmentIcon className='icon'/><span>Reclamation</span></a></Link>
-            <Link to={"/parametre/:id"}><a><SettingsIcon className='icon'/><span>Parametres</span></a></Link>
+            <Link to={"/"}><a><i><SignalCellularAltSharpIcon className='icons' /><span>Dashboard</span></i></a></Link>
+            <Link to={'/client'}><a><PeopleAltSharpIcon className='icons'/><span>Client</span></a></Link>
+            <Link to={"/reclamation"}><a><AssignmentIcon className='icons'/><span>Reclamation</span></a></Link>
+            <Link to={"/parametre/:id"}><a><SettingsIcon className='icons'/><span>Parametres</span></a></Link>
             
             <div className='buttom'><hr/>
-           <Link to={"/login"}><a><LoginIcon className='icon'/><span>Login</span></a></Link>
-            <Link to={"/login"}><a><PersonAddIcon className='icon'/><span>Register</span></a></Link>
+           <Link to={"/login"}><a><LoginIcon className='icons'/><span>Login</span></a></Link>
+            <Link to={"/login"}><a><PersonAddIcon className='icons'/><span>Register</span></a></Link>
             </div>
         
       </div>

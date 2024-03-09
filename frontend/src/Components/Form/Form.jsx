@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import './form.css'
 import Login from "./Login/Login.jsx"
 import Register from "./Register/Register.jsx";
+import SidebarAdmin from "../Sidebar/Admin/SidebarAdmin.jsx";
+import Navbar from "../Navbar/Navbar.jsx";
 
 export default function Form() {
   const [type, setType] = useState("signIn");
@@ -15,6 +17,10 @@ export default function Form() {
     "container " + (type === "signUp" ? "right-panel-active" : "");
   return (
     <div className="App">
+      
+      <div className="logoform">
+        <img src="/258541.svg" ></img>
+      </div>
       <h2>Se Connecter / Registrer</h2>
       <div className={containerClass} id="container">
         <Register/>

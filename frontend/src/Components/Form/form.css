@@ -19,7 +19,12 @@
     height: 100vh;
     margin: -20px 0 50px;
   }
-  
+  .logoform img{
+    width: 60px;
+    position: relative;
+    top: -120px;
+
+  }
   h1 {
     font-weight: bold;
     margin: 0;

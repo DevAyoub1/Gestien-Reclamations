@@ -15,9 +15,10 @@
     
 }
 hr{
-    width: 60%;
+    position: fixed;
+    width: 100%;
     border-radius: 50px;
-    border: 0.5px solid rgb(255, 162, 162);
+    border: 0.5px solid rgb(192, 192, 192);
 }
 .side {
     font-family: Montserrat;
@@ -25,19 +26,20 @@ hr{
     height: 100%;
     width: 85px;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     top: 0;
     left: 0;
-    background-color: rgba(255, 75, 43, 0.725);
-    backdrop-filter: blur(9px);
-    transition: 0.9s;
+    background-color: rgba(0, 0, 0, 0.725);
+    backdrop-filter: blur(90px);
+    transition: 1.0s;
     overflow-x: hidden;
     padding-top: 60px;
     white-space: nowrap;
+    
   }
  
   .side a {
-    padding: 8px 8px 8px 16px;
+    padding: 1px 1px 1px 16px;
     text-decoration: none;
     font-size: 20px;
     color: #dedede;
@@ -47,36 +49,47 @@ hr{
   .side a:hover {
     color: #ffffff;
     cursor: pointer;
-    text-shadow: 2px 2px 40px;
+    text-shadow: 2px 2px 4px;
   }
   
   
   
-  .icon,
+  .icons,
   span{
     vertical-align: middle;
   }
   
-  .icon {
+  .icons {
     margin-right: 33px;
   }
   
   .side:hover{
-    width: 280px;
+    width: 270px;
+    position: fixed;
+    backdrop-filter: blur(10px);
   }
   
   .buttom{
     position: relative;
-    top: 100px;
+    top: 235px;
   }
   .buttom hr{
     margin-bottom: 0px;
   }
-  @media screen and (max-height: 450px) {
-    .side {
-      padding-top: 15px;
-    }
-    .sidebar a {
-      font-size: 18px;
-    }
+@media only screen and (max-width:768px){
+  .lg{
+    width: 40px;
   }
+  .side{
+    backdrop-filter: blur(90px);
+    width: 65px;
+    height: 100%;
+    position: fixed;
+    padding-right: 8px;
+  }
+  .side a{
+    font-size: 12px;
+    
+  }
+  
+}

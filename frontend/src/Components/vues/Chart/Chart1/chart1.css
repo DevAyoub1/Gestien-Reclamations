@@ -1,0 +1,18 @@
+.chart{
+    margin: 0 auto;
+    padding: 19px;
+    border: 1px solid #0000002a;
+    box-shadow: 2px 2px 9px #0000002a;
+    border-radius: 8px;
+    width: 620px;
+}
+@media only screen and (max-width:768px){
+    .chart{
+        width: 400px;
+        overflow-y: scroll;
+        padding: 0;
+        margin: 0;
+        margin-top: 15px;
+    }
+    
+}
