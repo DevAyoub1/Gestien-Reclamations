@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Admin;
+use App\Models\Client;
+use App\Models\Reclamation;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +17,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        
+        
+        Admin::factory(5)->create();
+       
+        foreach (range(1,10) as $index) {
+            Client::factory(10)->create();
+            Reclamation::factory(20)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+            foreach (range(1,30) as $index) {
+                Reclamation::factory(10)->create([
+                    "IdClient" => rand(1,20),
+                ]);
+            }
+        }
     }
 }

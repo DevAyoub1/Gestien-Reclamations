@@ -2,6 +2,7 @@ import React from "react";
 import GoogleIcon from '@mui/icons-material/Google';
 import XIcon from '@mui/icons-material/X';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Axios } from "../../Api/Axios";
 
 
 function Register() {
@@ -22,9 +23,7 @@ function Register() {
     evt.preventDefault();
 
     const { name, email, password } = state;
-    alert(
-      // `You are sign up with name: ${name} email: ${email} and password: ${password}`
-    );
+    
 
     for (const key in state) {
       setState({
@@ -33,6 +32,10 @@ function Register() {
       });
     }
   };
+  const OnSubmit = (values) => {
+    const data = Axios.get('/login',values);
+    console.log(data)
+  }
 
   return (
     <div className="form-container sign-up-container">
@@ -71,7 +74,7 @@ function Register() {
           onChange={handleChange}
           placeholder="Password"
         />
-        <button>Register</button>
+        <button onClick={OnSubmit}>Register</button>
       </form>
     </div>
   );

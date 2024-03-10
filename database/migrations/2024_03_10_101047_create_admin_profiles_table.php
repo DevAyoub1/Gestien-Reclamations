@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gestionnaire_reclamations', function (Blueprint $table) {
-            $table->id('idGestionnaire');
+        Schema::create('admin_profiles', function (Blueprint $table) {
+            $table->id();
             $table->string('nom');
             $table->string('prenom');
+            $table->string('adress');
+            $table->string('email');
+            $table->unsignedBigInteger('IdAdmin');
+            $table->foreign('IdAdmin')->references('IdAdmin')->on('admins')->cascadeOnDelete();
+            $table->foreign('email')->references('email')->on("admins")->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gestionnaire_reclamations');
+        Schema::dropIfExists('admin_profiles');
     }
 };

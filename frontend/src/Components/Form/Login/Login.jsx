@@ -2,6 +2,7 @@ import React from "react";
 import GoogleIcon from '@mui/icons-material/Google';
 import XIcon from '@mui/icons-material/X';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Axios } from "../../Api/Axios";
 function Login() {
   const [state, setState] = React.useState({
     email: "",
@@ -28,7 +29,10 @@ function Login() {
       });
     }
   };
-
+  const OnSubmit = () => {
+    const axios = Axios.defaults;
+    console.log(axios)
+  }
   return (
     <div className="form-container sign-in-container">
       <form onSubmit={handleOnSubmit}>
@@ -60,7 +64,7 @@ function Login() {
           onChange={handleChange}
         />
         <a href="#">Mot de Pass oubliez?</a>
-        <button>Connecter</button>
+        <button onClick={OnSubmit}>Connecter</button>
       </form>
     </div>
   );

@@ -1,11 +1,13 @@
 import {createBrowserRouter} from 'react-router-dom';
-import Home from '../Home/Home';
+import UserHome from '../Home/UserHome';
 import Form from '../Form/Form';
 import Client from '../vues/Client/Client';
 import Reclamation from '../vues/Reclamation/Reclamation';
 import Parametre from '../vues/Parametre/Parametre';
 import Navbar from '../Navbar/Navbar';
 import Nav from '../Home/nav';
+import { Children } from 'react';
+import AdminHome from '../Home/AdminHome';
 //import Home from './Components/Home/Home'
 // import Form from './Components/Form/Form'
 // import Client from './Components/vues/Client/Client'
@@ -19,25 +21,44 @@ import Nav from '../Home/nav';
 // import Navbar from './Components/Navbar/Navbar'
 export  const Index=createBrowserRouter([
    
-           {
-        path:'/',
-        element:<Home/>
-    },
-    {
-        path:'/login',
-        element:<Form/>
-    },
-    {
-        path:'/client',
-        element:<Client/>
-    },
-    {
-        path:'/reclamation',
-        element:<Reclamation/>
-    },{
-        path:'/parametre/:id',
-        element:<Parametre/>
-    }
+            {
+                element: <UserHome/>,
+                children:[
+                    {
+                        path: "/",
+                        element: <UserHome/>
+                    },
+                    {
+                        path:'/login',
+                        element: <Form/>
+                    },
+                    {
+                        path:'/'
+                    }
+                ]
+            },
+            {
+                element: <AdminHome/>,
+                children: [
+                    {
+                        path:'/',
+                        element:<AdminHome/>
+                    },
+                    {
+                        path:'/client',
+                        element: <Client/>
+                    },
+                    {
+                        path:'/reclamation',
+                        element: <Reclamation/>
+                    },
+                    {
+                        path:'/profile',
+                        element:<Parametre/>
+                    }
+                ]
+            }
+           
         ]
 
     

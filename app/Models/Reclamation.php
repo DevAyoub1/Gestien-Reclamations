@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Reclamation extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "description","status","IdClient"
+    ];
+    protected $primaryKey = "IdReclamation";
+    protected $foreign = "IdClient";
+
 }

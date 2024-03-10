@@ -8,7 +8,7 @@ import Reclamation from '../vues/Reclamation/Reclamation'
 import Client from '../vues/Client/Client'
 import Chart from '../vues/Chart/Chart1/Chart1'
 import Chart2 from '../vues/Chart/Chart2/Chart2'
-export default function Home() {
+export default function AdminHome() {
   return (
     <div className='home'>
       <div className="navigation">

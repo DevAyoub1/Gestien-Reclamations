@@ -4,6 +4,7 @@ import Login from "./Login/Login.jsx"
 import Register from "./Register/Register.jsx";
 import SidebarAdmin from "../Sidebar/Admin/SidebarAdmin.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
+import { Axios } from "../Api/Axios.jsx";
 
 export default function Form() {
   const [type, setType] = useState("signIn");
@@ -13,6 +14,7 @@ export default function Form() {
       return;
     }
   };
+ 
   const containerClass =
     "container " + (type === "signUp" ? "right-panel-active" : "");
   return (

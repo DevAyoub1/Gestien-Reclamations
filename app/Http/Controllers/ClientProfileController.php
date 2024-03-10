@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GestionnaireReclamation;
+use App\Models\ClientProfile;
 use Illuminate\Http\Request;
 
-class GestionnaireReclamationController extends Controller
+class ClientProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class GestionnaireReclamationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GestionnaireReclamation $gestionnaireReclamation)
+    public function show(ClientProfile $clientProfile)
     {
         //
     }
@@ -42,7 +42,7 @@ class GestionnaireReclamationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GestionnaireReclamation $gestionnaireReclamation)
+    public function edit(ClientProfile $clientProfile)
     {
         //
     }
@@ -50,7 +50,7 @@ class GestionnaireReclamationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, GestionnaireReclamation $gestionnaireReclamation)
+    public function update(Request $request, ClientProfile $clientProfile)
     {
         //
     }
@@ -58,7 +58,7 @@ class GestionnaireReclamationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GestionnaireReclamation $gestionnaireReclamation)
+    public function destroy(ClientProfile $clientProfile)
     {
         //
     }
