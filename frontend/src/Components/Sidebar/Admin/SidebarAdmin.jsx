@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './sidebar.css'
-
+import {useNavigate} from 'react-router-dom'
 import SignalCellularAltSharpIcon from '@mui/icons-material/SignalCellularAltSharp';
 import ManageAccountsSharpIcon from '@mui/icons-material/ManageAccountsSharp';
 import PeopleAltSharpIcon from '@mui/icons-material/PeopleAltSharp';
@@ -15,7 +15,16 @@ import { Link, Outlet } from 'react-router-dom';
 
 
 export default function SidebarAdmin() {
-  
+  const navigate=useNavigate()
+  const logout=async()=>{
+     try {
+      await Axios.post('/logout')
+      navigate('/')
+
+     } catch (error) {
+      
+     }
+  }
   return (
     <div className='side' id='side' >
       <div className='logo'>
@@ -31,7 +40,7 @@ export default function SidebarAdmin() {
             <Link to={"/parametre/:id"}><a><SettingsIcon className='icons'/><span>Parametres</span></a></Link>
             
             <div className='buttom'><hr/>
-           <Link to={"/login"}><a><LoginIcon className='icons'/><span>Login</span></a></Link>
+           <Link to={"#"} onClick={logout}><a><LoginIcon className='icons'/><span>Logout</span></a></Link>
             <Link to={"/login"}><a><PersonAddIcon className='icons'/><span>Register</span></a></Link>
             </div>
             <div><Outlet/></div>

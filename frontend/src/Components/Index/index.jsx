@@ -21,25 +21,20 @@ import AdminHome from '../Home/AdminHome';
 // import Navbar from './Components/Navbar/Navbar'
 export  const Index=createBrowserRouter([
    
-            {
-                element: <UserHome/>,
-                children:[
+            
+                
                     {
                         path: "/",
-                        element: <UserHome/>
-                    },
-                    {
-                        path:'/login',
                         element: <Form/>
                     },
                     {
-                        path:'/'
-                    }
-                ]
-            },
-            {
-                element: <AdminHome/>,
-                children: [
+                        path:'/UserHome',
+                        element: <UserHome/>
+                    },
+                    
+            
+            
+               
                     {
                         path:'/',
                         element:<AdminHome/>
@@ -57,9 +52,7 @@ export  const Index=createBrowserRouter([
                         element:<Parametre/>
                     }
                 ]
-            }
-           
-        ]
+          
 
     
     
