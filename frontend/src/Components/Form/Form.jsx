@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './form.css'
 import Login from "./Login/Login.jsx"
-import Register from "./Register/Register.jsx";
-import SidebarAdmin from "../Sidebar/Admin/SidebarAdmin.jsx";
+// import Register from "./Register/Register.jsx";
+import SidebarAdmin from "../Sidebar/User/SidebarHome.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
 import { Axios } from "../Api/Axios.jsx";
 
@@ -25,7 +25,7 @@ export default function Form() {
       </div>
       <h2>Se Connecter / Registrer</h2>
       <div className={containerClass} id="container">
-        <Register/>
+        {/* <Register/> */}
         <Login />
         <div className="overlay-container">
           <div className="overlay">

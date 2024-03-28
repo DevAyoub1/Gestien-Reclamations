@@ -1,50 +1,43 @@
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24),
-  createData('Ice cream sandwich', 237, 9.0, 37),
-  createData('Eclair', 262, 16.0, 24),
-];
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { ArrowLeft as ArrowLeftIcon } from '@phosphor-icons/react/dist/ssr/ArrowLeft';
 
-export default function Client() {
+
+
+
+
+export default function NotFound() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="caption table">
-        <caption>List des Clients</caption>
-        <TableHead>
-          <TableRow>
-            <TableCell><strong>#ID</strong></TableCell>
-            <TableCell align="right">Nom</TableCell>
-            <TableCell align="right">Prenom&nbsp;(g)</TableCell>
-            <TableCell align="right">N Reclamation&nbsp;</TableCell>
-            
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Box component="main" sx={{ alignItems: 'center', display: 'flex', justifyContent: 'center', minHeight: '100%' }}>
+      <Stack spacing={3} sx={{ alignItems: 'center', maxWidth: 'md' }}>
+        <Box>
+          <Box
+            component="img"
+            alt="Under development"
+            src="/error-500.png"
+            sx={{ display: 'inline-block', height: 'auto', maxWidth: '100%', width: '400px' }}
+          />
+        </Box>
+        <Typography variant="h3" sx={{ textAlign: 'center' }}>
+          404: The page you are looking for isn&apos;t here
+        </Typography>
+        <Typography color="text.secondary" variant="body1" sx={{ textAlign: 'center' }}>
+          You either tried some shady route or you came here by mistake. Whichever it is, try using the navigation
+        </Typography>
+        <Button
+          
+          href={"/"}
+          startIcon={<ArrowLeftIcon fontSize="var(--icon-fontSize-md)" />}
+          variant="contained"
+        >
+          Go back to home
+        </Button>
+      </Stack>
+    </Box>
   );
 }

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -12,7 +15,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        return DB::table('users')->paginate('7');
     }
 
     /**
@@ -28,15 +31,40 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $guards = array_keys(config('auth.guards'));
+        $user = null;
+        foreach ($guards as $guard) {
+            $currentGuard = Auth::guard($guard);
+            if ($currentGuard->check()) {
+                $user = $currentGuard->user();
+                break;
+            }
+        }
+      $user->tokens()->delete();
+      $guards = ['web', 'admin'];
+
+foreach ($guards as $guard) {
+    Auth::guard($guard)->logout();
+}
+        
+        Auth::guard('web')->logout();
+       // Auth::guard('admin')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return response()->json([
+            'message'=>'user deconnecte'
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Client $client)
+    public function show(User $client)
     {
-        //
+        return $client;
     }
 
     /**
@@ -50,16 +78,19 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, User $client)
     {
-        //
+        return $client->update($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Client $client)
+    public function destroy(User $client)
     {
-        //
+        $client->delete();
+    }
+    public function CountNombre(User $client){
+        return $client->count();
     }
 }

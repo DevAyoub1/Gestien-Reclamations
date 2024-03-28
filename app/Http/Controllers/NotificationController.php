@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 
@@ -50,9 +51,9 @@ class NotificationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Notification $notification)
+    public function update(Request $request, Admin $notification)
     {
-        //
+        return  $notification->update($request->all());
     }
 
     /**
